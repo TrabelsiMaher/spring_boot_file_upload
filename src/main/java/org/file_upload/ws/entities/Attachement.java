@@ -2,6 +2,7 @@ package org.file_upload.ws.entities;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,5 +31,6 @@ public class Attachement {
 	private String fileName;
 	private String fileType;
 	@Lob
+	@Column(name="data", columnDefinition = "LONGBLOB")
 	private byte[] fileData;
 }
